@@ -7,7 +7,7 @@ import altair as alt
 
 # Load the data
 df = pd.read_csv("prevalence-by-mental-and-substance-use-disorder.csv")
-df1 = pd.read_csv("hare-with-mental-and-substance-disorders.csv")
+df1 = pd.read_csv("share-with-mental-and-substance-disorders.csv")
 df2 = pd.read_csv("share-with-mental-or-substance-disorders-by-sex.csv")
 df3=pd.read_csv("dalys-mental-illnesses-age-standardized.csv")
 df4=pd.read_csv("mental-and-substance-use-as-share-of-disease.csv")
