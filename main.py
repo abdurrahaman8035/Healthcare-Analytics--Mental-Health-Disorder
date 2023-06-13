@@ -6,18 +6,18 @@ import plotly.graph_objects as go
 import altair as alt
 
 # Load the data
-df = pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\prevalence-by-mental-and-substance-use-disorder.csv")
-df1 = pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\share-with-mental-and-substance-disorders.csv")
-df2 = pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\share-with-mental-or-substance-disorders-by-sex.csv")
-df3=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\dalys-mental-illnesses-age-standardized.csv")
-df4=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\mental-and-substance-use-as-share-of-disease.csv")
-df5=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\number-of-people-with-bipolar-disorder.csv")
-df6=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\number-of-people-with-depression.csv")
-df7=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\number-with-an-eating-disorder.csv")
-df8=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\number-with-anxiety-disorders.csv")
-df9=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\number-with-schizophrenia.csv")
-df10=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\Dalys by age.csv")
-df11=pd.read_csv("C:\\Users\\Dell\\OneDrive - American University of Beirut\\Desktop\\Healthcare\\suicide-rates-vs-prevalence-of-mental-and-substance-use-disorders.csv")
+df = pd.read_csv("prevalence-by-mental-and-substance-use-disorder.csv")
+df1 = pd.read_csv("hare-with-mental-and-substance-disorders.csv")
+df2 = pd.read_csv("share-with-mental-or-substance-disorders-by-sex.csv")
+df3=pd.read_csv("dalys-mental-illnesses-age-standardized.csv")
+df4=pd.read_csv("mental-and-substance-use-as-share-of-disease.csv")
+df5=pd.read_csv("number-of-people-with-bipolar-disorder.csv")
+df6=pd.read_csv("number-of-people-with-depression.csv")
+df7=pd.read_csv("number-with-an-eating-disorder.csv")
+df8=pd.read_csv("number-with-anxiety-disorders.csv")
+df9=pd.read_csv("number-with-schizophrenia.csv")
+df10=pd.read_csv("Dalys by age.csv")
+df11=pd.read_csv("suicide-rates-vs-prevalence-of-mental-and-substance-use-disorders.csv")
 
 
 
