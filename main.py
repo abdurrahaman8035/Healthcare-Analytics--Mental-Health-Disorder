@@ -23,7 +23,7 @@ df11=pd.read_csv("suicide-rates-vs-prevalence-of-mental-and-substance-use-disord
 
 st.set_page_config(layout="wide", page_title=None)
 
-tab1, tab2= st.tabs(["📈 Overview", ""])
+tab1, tab2= st.tabs(["📈 Overview"])
 
 with tab1:
 
@@ -53,9 +53,8 @@ with tab1:
 
     st.subheader("")
   
-    st.write(" Select Country and type of mental Disorder to view the prevalance of each Disorder over time and the total overview of mental health illness for each country upon selection")
 
-    country = st.selectbox("Select Country", df['Entity'].unique())
+    country = "Nigeria"
 
 
     filtered_data = df[df['Entity'] == country]
