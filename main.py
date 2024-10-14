@@ -23,11 +23,9 @@ df11=pd.read_csv("suicide-rates-vs-prevalence-of-mental-and-substance-use-disord
 
 st.set_page_config(layout="wide", page_title=None)
 
-tab1, tab2= st.tabs(["📈 Overview"])
 
-with tab1:
 
-    st.subheader("Estimates of People Suffering from Mental Health Illnesses")
+    st.subheader("Estimates of People Suffering from Mental Health Illnesses in Nigeria")
 
     col1, col2, col3, col4, col5 = st.columns(5)
 
