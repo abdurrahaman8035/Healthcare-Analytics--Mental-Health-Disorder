@@ -23,7 +23,7 @@ df11=pd.read_csv("suicide-rates-vs-prevalence-of-mental-and-substance-use-disord
 
 st.set_page_config(layout="wide", page_title=None)
 
-tab1, tab2= st.tabs(["📈 Overview", "Demographic"])
+tab1, tab2= st.tabs(["📈 Overview", ""])
 
 with tab1:
 
@@ -155,90 +155,6 @@ with tab1:
         #)
 
         #st.plotly_chart(fig4)
-
-# Doing Chloropleth world map
-# Creating the Choropleth map with animation over the years
-    st.subheader("Burder of Diseases in DALYS Globally of Mental Health Illnesses")
-    fig = px.choropleth(
-    df4, 
-    locations='Code',
-    locationmode='ISO-3',
-    color='DALYs (Disability-Adjusted Life Years) - Mental disorders - Sex: Both - Age: All Ages (Percent)',
-    hover_name='Entity',
-    animation_frame='Year',  # animation over the years
-    color_continuous_scale=px.colors.sequential.Plasma,
-    title='DALYs Mental Disorders (%) Over the Years',
-    height=600  # adjust as needed
-    )
-    fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000  # set the duration of the transition between frames
-    fig.layout.updatemenus[0].buttons[0].args[1]["transition"]["duration"] = 500  # set the duration of the transition between frames
-
-    st.plotly_chart(fig, use_container_width=True)  # make the plot use the full container width
-
-    
-
-
-with tab2:
-    st.subheader("Exploring the Demographic Landscape of Mental Health Disorders Prevalence among Males and Females")
-
-    # Group the data by continent and calculate average values
-    df2_agg = df2.groupby('Continent').agg({
-        'Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)': 'mean',
-        'Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)': 'mean',
-        'Population (historical estimates)': 'sum'
-    }).reset_index()
-
-    # Filter out rows with NaN values in 'Population (historical estimates)' column
-    df2_agg_cleaned = df2_agg.dropna(subset=['Population (historical estimates)'])
-
-    # Create two columns using beta_columns function
-    col1, col2 = st.columns(2)
-
-    # Plot the scatter plot using Plotly Express
-    fig = px.scatter(df2_agg_cleaned,
-                     x='Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)',
-                     y='Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)',
-                     size='Population (historical estimates)',
-                     size_max=20,
-                     color='Continent',
-                     hover_data=['Continent', 'Population (historical estimates)'],
-                     labels={'Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)': 'Male Prevalence',
-                             'Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)': 'Female Prevalence',
-                             'Population (historical estimates)': 'Population'},
-                     title="Relevance of Mental and Substance Use Disorder Prevalence by Gender Accross Continents")
-
-    # Display the scatter plot using Streamlit in the first column
-    col1.plotly_chart(fig, use_container_width=True)
-
-    # Group the data by Entity and calculate average values
-    df2_agg_entity = df2.groupby('Entity').agg({
-        'Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)': 'mean',
-        'Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)': 'mean',
-        'Population (historical estimates)': 'mean'
-    }).reset_index()
-
-    # Filter out rows with NaN values in 'Population (historical estimates)' column
-    df2_agg_entity_cleaned = df2_agg_entity.dropna(subset=['Population (historical estimates)'])
-
-    # Sort the dataframe by Male and Female Prevalence and get the top 30 countries
-    df2_agg_entity_sorted = df2_agg_entity_cleaned.sort_values(by=['Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)', 
-                                                                   'Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)'], ascending=False).head(30)
-
-    # Plot the scatter plot using Plotly Express
-    fig2 = px.scatter(df2_agg_entity_sorted,
-                      x='Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)',
-                      y='Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)',
-                      size='Population (historical estimates)',
-                      size_max=50,
-                      color='Entity',
-                     hover_data=['Entity', 'Population (historical estimates)'],
-                      labels={'Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)': 'Male Prevalence',
-                              'Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)': 'Female Prevalence',
-                              'Population (historical estimates)': 'Population'},
-                      title="Top 30 Countries-Relevance of Mental and Substance Use Disorder Prevalence by Gender")
-
-    # Display the scatter plot using Streamlit in the second column
-    col2.plotly_chart(fig2, use_container_width=True)
 
   # Create a columns layout
     col1, col2 = st.columns(2)
