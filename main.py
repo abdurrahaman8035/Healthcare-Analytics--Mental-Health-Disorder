@@ -279,17 +279,4 @@ with tab1:
     
     df_filtered = df4[(df4['Year'] == 2019) & df4['Entity'].isin(['World Bank Low Income', 'World Bank Lower Middle Income', 'World Bank Upper Middle Income', 'World Bank High Income'])]
 
-    col1.subheader(" Burden of Diseases Based on the Income level of countries")
-    # Creating the horizontal bar chart
-    fig = px.bar(df_filtered,
-                y='Entity',
-                x='DALYs (Disability-Adjusted Life Years) - Mental disorders - Sex: Both - Age: All Ages (Percent)',
-                title='DALYs Mental Disorders (%) for Different Income Levels in 2019',
-                labels={
-                    'Entity': 'Income Level',
-                    'DALYs (Disability-Adjusted Life Years) - Mental disorders - Sex: Both - Age: All Ages (Percent)': 'DALYs (%)'},
-                height=400, # Adjust the height as needed
-                orientation='h')
-
-    col1.plotly_chart(fig, use_container_width=True)  # make the plot use the full container width
-
+   
